@@ -5,3 +5,5 @@ const computerPoints = document.querySelector('#computerScore');
 const resetBtn = document.querySelector('#reset');
 
 resetBtn.addEventListener('click',() => location.reload());
+
+optionBtn.forEach(button => { button.addEventListener('click', getPlayerChoice) });
