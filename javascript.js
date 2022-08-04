@@ -36,3 +36,10 @@ function computerPlay () {
       }
    checkWinner();
   }  
+
+
+  const winnerResults ={
+    computer: ["You Lost the game to a computer!", 'red'],
+    player: ["You Win the game!!!!", 'green'],
+    tie: ["The game is a Tie!", 'blue']
+  }
