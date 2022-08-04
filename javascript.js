@@ -12,3 +12,8 @@ let computerChoices = [{choice: 'Rock', value: 0}, {choice: 'Paper', value: 1}, 
 let playerScore = 0;
 let compScore = 0;
 let playerChoice;
+
+function computerPlay () {
+    let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+    return result;
+  }
