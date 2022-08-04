@@ -17,3 +17,22 @@ function computerPlay () {
     let result = computerChoices[Math.floor(Math.random() * computerChoices.length)];
     return result;
   }
+
+
+  function playRound (playerSelection, computerSelection) {
+    let roundWinCombo = `${playerSelection}-${computerSelection.value}`;
+    let playerWinCombo = ['1-0', '0-2', '2-1'];
+  
+      if (Number(playerSelection) === computerSelection.value) {
+        playerPoints.textContent = ++playerScore
+        computerPoints.textContent = ++compScore
+        roundResults.textContent = "Tie!"
+      }else if (playerWinCombo.includes(roundWinCombo)) {
+          playerPoints.textContent = ++playerScore
+          roundResults.textContent = `You win! ${playerChoice} beats ${computerSelection.choice}`;
+      }else {
+          computerPoints.textContent = ++compScore
+          roundResults.textContent = `You lose! ${computerSelection.choice} beats ${playerChoice}`;
+      }
+   checkWinner();
+  }  
