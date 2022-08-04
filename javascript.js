@@ -43,3 +43,24 @@ function computerPlay () {
     player: ["You Win the game!!!!", 'green'],
     tie: ["The game is a Tie!", 'blue']
   }
+
+
+  function checkWinner() {
+    if (compScore === 5 || playerScore === 5) {
+      if (compScore === playerScore){
+        updateWinner('tie')
+      }else{
+        let win = `${(compScore > playerScore) ? 'computer' : 'player'}`;
+        updateWinner(win);
+      }
+    }
+  }
+
+  function updateWinner(winner){
+    roundResults.textContent = winnerResults[winner][0];
+    roundResults.style.color = winnerResults[winner][1];
+  
+    optionBtn.forEach(button => {
+      button.removeEventListener('click', getPlayerChoice);
+    });
+  }
