@@ -26,7 +26,7 @@ function computerPlay () {
       if (Number(playerSelection) === computerSelection.value) {
         playerPoints.textContent = ++playerScore
         computerPoints.textContent = ++compScore
-        roundResults.textContent = "Tie!"
+        roundResults.textContent = `Tie! ${playerChoice} == ${computerSelection.choice}`;
       }else if (playerWinCombo.includes(roundWinCombo)) {
           playerPoints.textContent = ++playerScore
           roundResults.textContent = `You win! ${playerChoice} beats ${computerSelection.choice}`;
